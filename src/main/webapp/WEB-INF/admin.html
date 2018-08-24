@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        #left {
+            width: 200px;
+            height: 600px;
+            background-color: #222d32;
+            float: left;
+        }
+        
+        .topBtn {
+            background-color: rgba(0, 0, 0, 0);
+        }
+        
+        .topBtnSelect {
+            background-color: black;
+            color: white;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .icon {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        
+        button {
+            outline: none;
+            color: #abb;
+            border: none;
+            width: 100%;
+            height: 44px;
+            text-align: left;
+        }
+        
+        button:hover {
+            color: white;
+        }
+        
+        .childBtn {
+            background-color: #2c3a40;
+        }
+        
+        .btnHidden {
+            display: none;
+        }
+        
+        #right {
+            position: absolute;
+            left: 300px;
+            top: 50px;
+        }
+        
+        #top {
+            width: 100%;
+            height: 50px;
+            background-color: #3c8dbc;
+        }
+        
+        #topT {
+            color: white;
+            font-size: 20px;
+            line-height: 50px;
+            /*padding-left: 20px;*/
+            margin-left: 20px;
+        }
+        
+        .topBtn2 {
+            width: auto;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            text-align: center;
+            position: relative;
+            top: -2px;
+        }
+        
+        .topBtn2:hover {
+            background-color: blue;
+        }
+        
+        #user {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+        
+        #quit {
+            position: absolute;
+            right: 50px;
+            top: 0px;
+        }
+        /*右边部分*/
+        
+        #right {
+            background-color: white;
+            height: 300px;
+            width: 1500px;
+            float: left;
+            /*display: inline-block;
+            vertical-align: top;*/
+        }
+        
+        #min {
+            width: 100%;
+            height: 50px;
+            margin: 0;
+        }
+        
+        input {
+            width: 100px;
+            height: 35px;
+            color: white;
+            margin: 5px 0 0 5px;
+            background-color: #2894FF;
+            size: 13px;
+            border-radius: 1em;
+            border-color: none;
+            display: block;
+            outline: none;
+            float: left;
+            /* box-shadow: none;*/
+        }
+        
+        /*#ta {
+            width: 90%;
+            text-align: center;
+            float: left;
+        }
+        
+        #ta table tr td {
+            padding: 0 40px 0 40px;
+            align-content: center;
+            height: 30px;
+            border: 0.1em solid blue;
+        }
+        
+        #ta table {
+            border-collapse: collapse;
+        }
+        
+        #ta a {
+            text-decoration: none;
+        }
+        
+        #ta a:link {
+            color: blue;
+        }*/
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        <font id="topT">客户管理信息</font>
+        <button style="margin-left: 180px;" class="topBtn2">工作台</button>
+        <button class="topBtn2">报表</button>
+        <button class="topBtn2">客户信息</button>
+        <button class="topBtn2">员工信息</button>
+        <button class="topBtn2">公告信息</button>
+        <button class="topBtn2">发件箱</button>
+
+        <button id="quit" class="topBtn2">退出</button>
+        <button id="user" class="topBtn2">admin</button>
+    </div>
+    <!--左边部分-->
+    <div id="left">
+        <!--客户管理-->
+        <div>
+            <button id="top1" class="topBtn" onclick="btnTop(this,childDiv1)"><font class="icon glyphicon glyphicon-user"></font>客户管理</button>
+        </div>
+        <div id="childDiv1" class="btnHidden">
+            <button class="childBtn" onclick="btnChild(this,i1_0,'客户信息')"><font id="i1_0" class="icon glyphicon glyphicon-star-empty"></font>客户信息</button>
+            <button class="childBtn" onclick="btnChild(this,i1_1,'客户分配')"><font id="i1_1" class="icon glyphicon glyphicon-star-empty"></font>客户分配</button>
+            <button class="childBtn" onclick="btnChild(this,i1_2,'客户关怀')"><font id="i1_2" class="icon glyphicon glyphicon-star-empty"></font>客户关怀</button>
+            <button class="childBtn" onclick="btnChild(this,i1_3,'客户分类')"><font id="i1_3" class="icon glyphicon glyphicon-star-empty"></font>客户分类</button>
+            <button class="childBtn" onclick="btnChild(this,i1_4,'客户状态')"><font id="i1_4" class="icon glyphicon glyphicon-star-empty"></font>客户状态</button>
+            <button class="childBtn" onclick="btnChild(this,i1_5,'客户来源')"><font id="i1_5" class="icon glyphicon glyphicon-star-empty"></font>客户来源</button>
+        </div>
+
+        <!--内部信息-->
+        <div>
+            <button id="top2" class="topBtn" onclick="btnTop(this,childDiv2)"><font class="icon glyphicon glyphicon-user"></font>内部信息</button>
+        </div>
+        <div id="childDiv2" class="btnHidden">
+            <button class="childBtn" onclick="btnChild(this,i2_0,'通知公告')"><font id="i2_0" class="icon glyphicon glyphicon-star-empty"></font>通知公告</button>
+            <button class="childBtn" onclick="btnChild(this,i2_1,'员工信息')"><font id="i2_1" class="icon glyphicon glyphicon-star-empty"></font>员工信息</button>
+            <button class="childBtn" onclick="btnChild(this,i2_2,'部门信息')"><font id="i2_2" class="icon glyphicon glyphicon-star-empty"></font>部门信息</button>
+        </div>
+        <!--站内邮件-->
+        <div>
+            <button id="top3" class="topBtn" onclick="btnTop(this,childDiv3)"><font class="icon glyphicon glyphicon-user"></font>站内邮件</button>
+        </div>
+        <div id="childDiv3" class="btnHidden">
+            <button class="childBtn" onclick="btnChild(this,i3_0,'写邮件')"><font id="i3_0" class="icon glyphicon glyphicon-star-empty"></font>写邮件</button>
+            <button class="childBtn" onclick="btnChild(this,i3_1,'收件箱')"><font id="i3_1" class="icon glyphicon glyphicon-star-empty"></font>收邮件</button>
+            <button class="childBtn" onclick="btnChild(this,i3_2,'发件箱')"><font id="i3_2" class="icon glyphicon glyphicon-star-empty"></font>发件箱</button>
+            <button class="childBtn" onclick="btnChild(this,i3_3,'草稿箱')"><font id="i3_3" class="icon glyphicon glyphicon-star-empty"></font>草稿箱</button>
+            <button class="childBtn" onclick="btnChild(this,i3_4,'垃圾箱')"><font id="i3_4" class="icon glyphicon glyphicon-star-empty"></font>垃圾箱</button>
+        </div>
+    </div>
+    <!--右边部分-->
+    <div id="right">
+        <font id="title">
+            <div id="min"><input name="用户登录" value="用户登录" type="button"></div>
+            <!--<div id="ta">
+                <table border="1px solid #6D6D6D" width="1200" align="center">
+                    <tr>
+                        <td>序号</td>
+                        <td>角色名称</td>
+                        <td>角色描述</td>
+                        <td>更新</td>
+                        <td><a href="admin.html">操作</a></td>
+
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>学生</td>
+                        <td>认真听课</td>
+                        <td>2017－10－10 10：55：55</td>
+                    </tr>
+                    <tr>
+                        <td>aaaa</td>
+                        <td></td>
+                        <td>aaaaa</td>
+                        <td>a</td>
+                    </tr>
+
+                </table>
+            </div>-->
+
+        </font>
+
+    </div>
+
+
+    <script>
+                                              var lastTopBtn = null;
+                                              var lastTopDiv = null;
+                                              function btnTop(top, childDiv) {
+                                                  if (top == lastTopBtn) {        //判断是否是为新的点击事件
+                                                      if (top.className == "topBtn") {    //判断css的名字是否为一级菜单
+                                                          top.className = "topBtnSelect"; //按钮的css名字为已设定的样式名(一级菜单)
+                                                          childDiv.style.display = "inline";//子菜单的状态为点击一次显示
+                                                      } else {
+                                                          top.className = "topBtn";   //否则为原来的样式
+                                                          childDiv.style.display = "none";//子菜单的状态仍为隐藏
+                                                      }
+                                                      return;
+                                                  }
+                                                  if (lastTopBtn != null) {       //如果上一次不为空，即有点击事件正在发生
+                                                      lastTopBtn.className = "topBtn";//点击事件仍一级菜单（无效点击）
+                                                      lastTopDiv.style.display = "none";//子菜单的状态为隐藏，收回！
+                                                  }
+                                                  top.className = "topBtnSelect";//如果为空，css样式为一级状态样式
+                                                  childDiv.style.display = "inline";//子菜单为dianji 显示
+                                                  lastTopBtn = top;
+                                                  lastTopDiv = childDiv;
+                                              }
+                                              var lastChildBtn = null;
+                                              var lastChildIcon = null;
+                                              function btnChild(btn, icon, args) {
+                                                  if (lastChildBtn != null) { //如果有点击事件正在发生（二级菜单）
+                                                      lastChildBtn.style.color = "#abb";  //字体颜色为灰
+                                                      lastChildIcon.className = "icon glyphicon glyphicon-star-empty";//图标为灰
+                                                  }
+
+                                                  btn.style.color = "white";  //否则，点击为白
+                                                  icon.className = "icon glyphicon glyphicon-star";//图标为亮
+
+                                                  lastChildBtn = btn;
+                                                  lastChildIcon = icon;
+                                                  title.innerHTML = args;
+                                              }
+    </script>
+
+
+</body>
+
+</html>
